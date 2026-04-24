@@ -1,0 +1,26 @@
+/* style.css */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #222222;
+    --accent-color: #0070f3; /* 经典的链接蓝 */
+}
+
+body {
+    font-family: "JetBrains Mono", "PingFang SC", monospace; /* 程序员专属字体 */
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    border-bottom: 2px solid var(--text-color);
+    display: inline-block;
+    padding-right: 20px;
+}
+
+/* 简单的响应式适配 */
+@media (max-width: 600px) {
+    body { margin: 20px auto; }
+}
