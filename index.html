@@ -21,7 +21,7 @@
                     <a class="nav-link active" href="#">Resume</a>
                     <a class="nav-link" href="#publications">Publications</a>
                     <div class="divider-dot"></div>
-                    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">&#9790;</button>
+                    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">&#9788;</button>
                 </div>
             </div>
         </nav>
@@ -248,17 +248,17 @@
         </footer>
 
         <script>
-        let currentTheme = 'light';
+        let currentTheme = 'dark';
 
         function toggleTheme() {
-        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-        if (currentTheme === 'dark') {
-            document.body.setAttribute('data-theme', 'dark');
-            document.getElementById('themeBtn').innerHTML = '&#9788;';
-        } else {
-            document.body.removeAttribute('data-theme');
-            document.getElementById('themeBtn').innerHTML = '&#9790;';
-        }
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            if (currentTheme === 'light') {
+                document.body.setAttribute('data-theme', 'light');
+                document.getElementById('themeBtn').innerHTML = '&#9790;';
+            } else {
+                document.body.removeAttribute('data-theme');
+                document.getElementById('themeBtn').innerHTML = '&#9788;';
+            }
         }
 
         function observeSections() {
