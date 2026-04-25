@@ -403,6 +403,72 @@ body {
 }
 .cert-item strong { color: var(--ink); font-weight: 600; }
 
+/* ─── PUBLICATIONS ─── */
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.publication-card {
+  padding: 1.8rem;
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.publication-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-3px);
+}
+.publication-card-tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--info);
+  background: var(--info-bg);
+  border: 1px solid var(--info-border);
+  padding: 3px 10px;
+  border-radius: 2px;
+  display: inline-block;
+  align-self: flex-start;
+}
+.publication-card h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.publication-card-meta {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.75;
+  flex: 1;
+}
+.publication-card-link {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.4rem;
+  transition: gap 0.2s var(--ease);
+}
+.publication-card:hover .publication-card-link { gap: 10px; }
+.publication-card-link::after { content: "→"; }
+
 /* ─── FOOTER ─── */
 .foot {
   max-width: 960px;
@@ -430,76 +496,10 @@ body {
   color: var(--ink-faint);
 }
 
-/* ─── PUBLICATIONS ─── */
-.writings-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-.writing-card {
-  padding: 1.8rem;
-  background: var(--paper-warm);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
-}
-.writing-card:hover {
-  border-color: var(--accent-border);
-  transform: translateY(-3px);
-}
-.writing-card-tag {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--info);
-  background: var(--info-bg);
-  border: 1px solid var(--info-border);
-  padding: 3px 10px;
-  border-radius: 2px;
-  display: inline-block;
-  align-self: flex-start;
-}
-.writing-card h3 {
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-  color: var(--ink);
-}
-.writing-card-meta {
-  font-size: 0.85rem;
-  color: var(--ink-muted);
-  line-height: 1.75;
-  flex: 1;
-}
-.writing-card-link {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 0.4rem;
-  transition: gap 0.2s var(--ease);
-}
-.writing-card:hover .writing-card-link { gap: 10px; }
-.writing-card-link::after { content: "→"; }
-
 /* ─── PRINT ─── */
 @media print {
   body { background: white; }
-  .topbar, .writings-sect, .foot, .theme-btn { display: none; }
+  .topbar, .publications-sect, .foot, .theme-btn { display: none; }
   .hero { padding-top: 2rem; }
   .sect { opacity: 1; transform: none; margin-top: 2rem; }
   .entry { background: none; border: 1px solid #ddd; }
@@ -518,7 +518,7 @@ body {
   .entry-date { align-self: flex-start; }
   .skill-group { flex-direction: column; gap: 0.5rem; }
   .skill-label { min-width: auto; }
-  .writings-grid { grid-template-columns: 1fr; }
+  .publications-grid { grid-template-columns: 1fr; }
   .foot { flex-direction: column; text-align: center; }
   .sect-num { font-size: 1.8rem; }
   .hero-contact { flex-direction: column; gap: 0.3rem; }
