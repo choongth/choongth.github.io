@@ -52,9 +52,20 @@ export const projects: Array<{
   visual?: "semantic-search"
 }> = [
   {
-    title: "Agent RAG App",
-    category: "AI/Agent",
+    title: "My Portfolio",
+    category: "Web",
     date: "2025",
+    description: "My personal portfolio showcasing my experiences, projects, translations & publications.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "GitHub.io"],
+    tags: ["rag", "ai-agent", "hybrid-search"],
+    image: "",
+    link: "https://github.com/choongth/choongth.github.io",
+    dossier: "The pipeline runs in two stages: a DeepSeek agent uses tool-calling to decide retrieval actions, then synthesises streamed responses. Under the hood, retrieval combines SentenceTransformer HNSW vectors with BM25 keyword search, followed by cross-encoder reranking — all containerised with Docker and deployed on Railway.",
+  },
+  {
+    title: "Smart Doc Agent",
+    category: "AI/Agent",
+    date: "2026",
     description: "Production-grade RAG document assistant with hybrid BM25 + semantic search, cross-encoder reranking, and streamed token-by-token answers via a DeepSeek agent.",
     technologies: ["Python", "FastAPI", "ChromaDB", "DeepSeek", "Streamlit", "Docker"],
     tags: ["rag", "ai-agent", "hybrid-search"],
@@ -65,7 +76,7 @@ export const projects: Array<{
   {
     title: "Parallel Customer Service Agent",
     category: "AWS",
-    date: "2025",
+    date: "2026",
     description: "Serverless multi-agent system on AWS achieving 9.3× speedup over sequential processing via SQS + Lambda parallelisation and a two-layer DynamoDB memory system.",
     technologies: ["Python", "AWS Lambda", "Amazon SQS", "DynamoDB", "Bedrock", "SAM"],
     tags: ["aws", "serverless", "multi-agent"],
@@ -76,7 +87,7 @@ export const projects: Array<{
   {
     title: "Sift — Autonomous Research Agent",
     category: "AI/Agent",
-    date: "2025",
+    date: "2026",
     description: "Autonomous AI research agent using MCP, Claude Sonnet, and a human-in-the-loop workflow to search the web, process PDFs, and generate structured Markdown reports.",
     technologies: ["Python", "FastAPI", "Chainlit", "MCP", "Claude", "AWS S3", "Docker", "Nginx"],
     tags: ["mcp", "ai-agent", "human-in-the-loop"],
@@ -87,7 +98,7 @@ export const projects: Array<{
   {
     title: "FridgeLedger",
     category: "Full-Stack",
-    date: "2025",
+    date: "2026",
     description: "AI-powered receipt scanner and pantry tracker that detects grocery price inflation and shrinkflation over time. AWS CendekiAwan Hackathon submission.",
     technologies: ["Next.js", "TypeScript", "FastAPI", "Supabase", "Amazon Bedrock", "Tailwind CSS"],
     tags: ["full-stack", "ai", "hackathon"],
@@ -98,7 +109,7 @@ export const projects: Array<{
   {
     title: "Devil Learn Language",
     category: "Web",
-    date: "2025",
+    date: "2026",
     description: "Clean no-login web app for memorising all 46 basic Japanese Hiragana characters, with dual-mode exercises, audio pronunciation, and local progress tracking.",
     technologies: ["React", "Vite", "Tailwind CSS", "Web Speech API"],
     tags: ["react", "education", "japanese"],
@@ -109,7 +120,7 @@ export const projects: Array<{
   {
     title: "Ice Cream Box Guessing Game",
     category: "Web",
-    date: "2024",
+    date: "2026",
     description: "Real-time 2-player guessing game using Firebase. One player secretly fills a box, the other guesses — live scoring synced across both sessions via a shared room code.",
     technologies: ["HTML", "CSS", "JavaScript", "Firebase Realtime Database"],
     tags: ["realtime", "firebase", "game"],
@@ -127,18 +138,18 @@ export const publications: Array<{
   link: string
 }> = [
   {
-    title: "Software Architecture Patterns",
-    description: "Chinese translation of the classic technical guide covering fundamental software architecture patterns.",
-    technologies: ["Technical Writing", "Software Architecture"],
-    tags: ["translation", "architecture", "open-source"],
-    link: "https://github.com/choongth/Software_Architecture_Patterns_Chinese_Translated",
-  },
-  {
     title: "Cloud Architecture Patterns",
     description: "Chinese translation of the essential cloud design patterns guide — covering scalability, availability, and resilience.",
     technologies: ["Technical Writing", "Cloud Architecture"],
     tags: ["translation", "cloud", "open-source"],
     link: "https://github.com/choongth/Cloud_Architecture_Patterns_Chinese_Translated",
+  },
+  {
+    title: "Software Architecture Patterns",
+    description: "Chinese translation of the classic technical guide covering fundamental software architecture patterns.",
+    technologies: ["Technical Writing", "Software Architecture"],
+    tags: ["translation", "architecture", "open-source"],
+    link: "https://github.com/choongth/Software_Architecture_Patterns_Chinese_Translated",
   },
   {
     title: "Designing Event-Driven Systems",
@@ -148,11 +159,25 @@ export const publications: Array<{
     link: "https://github.com/choongth/Designing_Event-Driven_Systems_Chinese_Translated",
   },
   {
-    title: "Research Paper Translations",
-    description: "Chinese translations of three research papers: The Case for Shared Nothing, Towards HPC through Parallel Programming, and Immutability Changes Everything.",
-    technologies: ["Technical Writing", "Research"],
+    title: "The Case for Shared Nothing",
+    description: "Chinese translation .",
+    technologies: ["Technical Writing", "Database"],
     tags: ["translation", "research", "open-source"],
-    link: "https://github.com/choongth/Research-Paper-Chinese-Translated",
+    link: "https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E8%AE%BA%E6%97%A0%E5%85%B1%E4%BA%AB.md",
+  },
+  {
+    title: "Towards HPC through Parallel Programming",
+    description: "Chinese translation.",
+    technologies: ["Technical Writing", "High Performance Computing"],
+    tags: ["translation", "research", "open-source"],
+    link: "https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E9%80%9A%E8%BF%87%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F%E5%8F%8A%E5%85%B6%E5%8E%9F%E7%90%86%E8%BF%88%E5%90%91%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97_(HPC).md",
+  },
+  {
+    title: "Immutability Changes Everything",
+    description: "Chinese translation ",
+    technologies: ["Technical Writing", "Research", "Event-Sourcing"],
+    tags: ["translation", "research", "open-source"],
+    link: "https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E4%B8%8D%E5%8F%98%E6%80%A7%E6%94%B9%E5%8F%98%E4%B8%80%E5%88%87.md",
   },
 ]
 
