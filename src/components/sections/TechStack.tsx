@@ -72,7 +72,7 @@ const categoryCopy: Record<string, { title: string; summary: string; signal: str
   },
   "Workflow/Automation": {
     title: "Workflow & Automation",
-    summary: "AI orchestration, workflow orchestration, automation system."
+    summary: "AI orchestration, workflow orchestration, automation system.",
     signal: "n8n / coze / dify",
   },
 }
