@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { Github, Mail, Menu, X } from "lucide-react"
+import { Github, Mail, Menu, Linkedin, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { BracketLabel } from "@/components/shared/BracketLabel"
 import { ThemeToggle } from "@/components/theme/ThemeToggle"
@@ -12,14 +12,16 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#techstack" },
   { label: "Publications", href: "#publications" },
+  { label: "Awards", href: "#awards" },
+  { label: "Skills", href: "#techstack" },
   { label: "Contact", href: "#contact" },
 ]
 
 const socialLinks = [
   { label: "GITHUB", href: personalData.github, icon: Github },
-  { label: "MAIL", href: `mailto:${personalData.email}`, icon: Mail },
+  { label: "LINKEDIN", href:  personalData.linkedin, icon: Linkedin },
+  { label: "MAIL", href: `mailto:${personalData.email}`, icon: Mail }
 ]
 
 export function Navbar() {
@@ -67,7 +69,7 @@ export function Navbar() {
                 Choong Ti Huai
               </span>
               <span className="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-muted-foreground transition-colors group-hover:text-accent">
-                AI & FULL-STACK / CS STUDENT
+                AI & FULL-STACK / Software Architect / CS STUDENT
               </span>
             </span>
           </Link>

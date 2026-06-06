@@ -70,6 +70,11 @@ const categoryCopy: Record<string, { title: string; summary: string; signal: str
     summary: "Distributed systems design, event-driven patterns, and the engineering fundamentals behind scalable software.",
     signal: "distributed / events / oop",
   },
+  "Workflow/Automation": {
+    title: "Workflow & Automation",
+    summary: "AI orchestration, workflow orchestration, automation system."
+    signal: "n8n / coze / dify",
+  },
 }
 
 export function TechStack() {
@@ -167,7 +172,7 @@ export function TechStack() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center gap-12">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
           <div>
-            <SectionLabel number="04" title="TECH STACK" />
+            <SectionLabel number="06" title="TECH STACK" />
             <h2 className="font-editorial text-5xl font-black leading-[0.98] tracking-normal text-foreground md:text-6xl lg:text-7xl">
               Tech Stack
             </h2>

@@ -59,7 +59,7 @@ export function Contact() {
       <div className="absolute left-0 top-0 h-full w-1/2 text-foreground/25 swiss-dots-fine pointer-events-none" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="contact-content">
-          <SectionLabel number="06" title="CONTACT" />
+          <SectionLabel number="07" title="CONTACT" />
         </div>
 
         <div className="grid gap-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(28rem,1.05fr)] lg:gap-24">

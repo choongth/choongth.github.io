@@ -1,6 +1,6 @@
 export const personalData = {
   name: "Choong Ti Huai",
-  title: "AI & Full-Stack Developer | Computer Science Student",
+  title: "AI & Full-Stack Developer | System Architect | Computer Science Student",
   tagline: "Bridging sophisticated AI models with robust, production-grade backends.",
   bio: "Solid foundation in Distributed Systems and Backend Architecture, specializing in high-concurrency systems and AI Agent orchestration. Extensive experience in implementing SAGA patterns for distributed consistency and optimizing high-performance data pipelines. Passionate about deconstructing complex systems to their root concepts, bridging the gap between sophisticated AI models and robust, production-grade backends.",
   email: "tihuaichoong@gmail.com",
@@ -12,7 +12,7 @@ export const personalData = {
 export const personalInfo = {
   ...personalData,
   stats: [
-    { label: "CGPA", value: "3.82" },
+    { label: "CGPA", value: "3.84" },
     { label: "Projects", value: "8+" },
     { label: "Status", value: "Intern" },
   ],
@@ -20,20 +20,23 @@ export const personalInfo = {
 
 export const experiences: Array<{
   company: string
+  project: string
   role: string
   period: string
   description: string
 }> = [
   {
-    company: "AIT Systems",
+    company: "Daikin Malaysia (Contracted Project)",
+    project: "AIT Systems",
     role: "Technical Lead — Intelligent Enterprise Management Platform",
-    period: "Sep 2025 - Present",
+    period: "Aug 2025 - Present",
     description: "Designed TypeScript-based microservices and a RAG stack with Ollama local LLM. Implemented RBAC data security for an enterprise AI assistant handling knowledge retrieval at scale.",
   },
   {
-    company: "Malaysia Smart Tourism AI Assistant",
-    role: "Core Developer & AI Algorithm Lead",
-    period: "2025 - Present",
+    company: "Own Project",
+    project: "SynTour - Malaysia Smart Tourism AI Assistant",
+    role: "System Architect & AI Algorithm Lead",
+    period: "Sep 2025 - Dec 2025",
     description: "Fine-tuned Gemini 2.5 Flash on Google Vertex AI for Malaysian tourism context. Designed a four-stage dialogue engine with multimodal interaction built on FastAPI and Streamlit.",
   },
 ]
@@ -67,7 +70,7 @@ export const projects: Array<{
     category: "AI/Agent",
     date: "2026",
     description: "Production-grade RAG document assistant with hybrid BM25 + semantic search, cross-encoder reranking, and streamed token-by-token answers via a DeepSeek agent.",
-    technologies: ["Python", "FastAPI", "ChromaDB", "DeepSeek", "Streamlit", "Docker"],
+    technologies: ["Python", "FastAPI", "ChromaDB", "RAG", "DeepSeek", "Streamlit", "Docker"],
     tags: ["rag", "ai-agent", "hybrid-search"],
     image: "",
     link: "https://github.com/choongth/agent-rag-app",
@@ -181,6 +184,42 @@ export const publications: Array<{
   },
 ]
 
+export const awards: Array<{
+  title: string
+  project?: string
+  description: string
+  date: string
+  scope: "National" | "International" | "University"
+}> = [
+  {
+    title: "APICTA Awards (Malaysia Digital) 2025 — Tertiary Student Project Finalist",
+    project: "SynTour",
+    description: "Vertex AI Gemini fine-tuned Malaysia travel agent built with LangChain/LangGraph and n8n. Presented to the category judging panel on 21 Oct 2025 at PIKOM, the National Tech Association of Malaysia.",
+    date: "Oct 2025",
+    scope: "National",
+  },
+  {
+    title: "AWS CendekiAwan Hackathon 2026 — Top 20 Finalists",
+    project: "FridgeLedger",
+    description: "AI-powered receipt scanner and pantry tracker that detects grocery price inflation and shrinkflation over time. Certificate of achievement issued May 2026 by Asia Pacific University of Technology and Innovation (APU/APIIT).",
+    date: "May 2026",
+    scope: "National",
+  },
+  {
+    title: "Micron X Esum Case Study Competition",
+    project: "Reliability Sentinel",
+    description: "Packaging Reliability Sentinel Dashboard for Semiconductor Industry.",
+    date: "May 2026",
+    scope: "National",
+  },
+  {
+    title: "APU Vice-Chancellor's List",
+    description: "Excellent Academic Achievement, Academic Year 2024/25. Signed by Vice Chancellor Prof Dr Ho Chin Kuan.",
+    date: "AY 2024/25",
+    scope: "University",
+  },
+]
+
 export const techStack = [
   // Languages
   { name: "Python", category: "Languages", level: 85 },
@@ -257,6 +296,8 @@ export const techStack = [
   { name: "High Performance Computing", category: "Architecture", level: 60 },
   { name: "Git", category: "Architecture", level: 82 },
   { name: "Cloud Computing", category: "Architecture", level: 72 },
+  // Workflow/Automation
+  { name: "n8n", category: "Workflow/Automation", level: 70 },
 ]
 
 export const skills = techStack
