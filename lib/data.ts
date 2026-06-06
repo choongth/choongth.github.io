@@ -177,7 +177,7 @@ export const publications: Array<{
     description: "Chinese translation ",
     technologies: ["Technical Writing", "Research", "Event-Sourcing"],
     tags: ["translation", "research", "open-source"],
-    link: https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E4%B8%8D%E5%8F%98%E6%80%A7%E6%94%B9%E5%8F%98%E4%B8%80%E5%88%87.md",
+    link: "https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E4%B8%8D%E5%8F%98%E6%80%A7%E6%94%B9%E5%8F%98%E4%B8%80%E5%88%87.md",
   },
 ]
 
