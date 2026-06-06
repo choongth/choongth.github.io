@@ -15,7 +15,7 @@ export function Publications() {
     <section id="publications" ref={sectionRef} className="magazine-page relative px-6 py-32 lg:px-10 lg:py-40">
       <div className="absolute right-0 top-0 h-64 w-full text-foreground/30 swiss-dots-fine pointer-events-none" />
       <div className="relative z-10 mx-auto max-w-7xl">
-        <SectionLabel number="04" title="PUBLICATIONS" />
+        <SectionLabel number="05" title="PUBLICATIONS" />
         <div className="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <h2 className="font-editorial text-5xl font-black leading-[0.98] tracking-normal text-foreground md:text-6xl lg:text-7xl">
             Translations &amp; Publications

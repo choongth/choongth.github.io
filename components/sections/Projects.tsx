@@ -146,13 +146,6 @@ export function Projects() {
           duration: 0.42,
           ease: "expo.out",
         })
-        gsap.to(card.querySelectorAll(".project-river-token"), {
-          y: prefersReduced ? 0 : -5,
-          autoAlpha: 1,
-          duration: 0.26,
-          stagger: 0.025,
-          ease: "power3.out",
-        })
       })
 
       const leave = safe(() => {
@@ -168,12 +161,6 @@ export function Projects() {
           scale: 1,
           z: index % 2 === 0 ? 80 : 24,
           duration: 0.36,
-          ease: "power3.out",
-        })
-        gsap.to(card.querySelectorAll(".project-river-token"), {
-          y: 0,
-          autoAlpha: 0.78,
-          duration: 0.2,
           ease: "power3.out",
         })
       })
@@ -225,7 +212,7 @@ export function Projects() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center gap-12">
         <div className="project-river-heading grid gap-8 lg:grid-cols-[24rem_minmax(0,1fr)] lg:items-end">
           <div>
-            <SectionLabel number="02" title="PROJECTS" />
+            <SectionLabel number="03" title="PROJECTS" />
             <h2 className="font-editorial text-5xl font-black leading-[0.98] tracking-normal text-foreground md:text-6xl lg:text-7xl">
               Selected Projects
             </h2>
@@ -323,20 +310,20 @@ export function Projects() {
                           )}
                           <Rotate3D className="absolute right-5 top-5 h-5 w-5 text-accent/70" />
                         </span>
+                        <span className="project-river-token-row">
+                          {project.technologies.map((tech) => (
+                            <span key={tech} className="project-river-token">
+                              {tech}
+                            </span>
+                          ))}
+                        </span>
                         <span className="block text-left">
                           <span className="block font-editorial text-4xl font-semibold leading-tight tracking-normal text-foreground transition-colors group-hover:text-accent">
                             {project.title}
                           </span>
-                          <span className="mt-4 block text-sm leading-7 text-muted-foreground">
+                          <span className="mt-3 block text-sm leading-6 text-muted-foreground line-clamp-3">
                             {project.description}
                           </span>
-                        </span>
-                        <span className="project-river-token-row">
-                          {project.technologies.map((tech) => (
-                            <span key={tech} className="project-river-token">
-                              [{tech}]
-                            </span>
-                          ))}
                         </span>
                       </span>
 

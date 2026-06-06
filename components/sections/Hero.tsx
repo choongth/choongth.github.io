@@ -95,15 +95,15 @@ export function Hero() {
                   className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-foreground transition-colors hover:text-accent"
                   data-cursor-hover
                 >
-                  看项目
+                  View Projects
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
                 <a
-                  href="#blog"
+                  href="#publications"
                   className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-accent"
                   data-cursor-hover
                 >
-                  读文章
+                  View Publications
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </div>
@@ -130,7 +130,7 @@ export function Hero() {
               </div>
             </div>
             <p className="max-w-[16rem] text-sm leading-7 text-muted-foreground">
-              目前正在系统学习 Agent 开发，期待一段能把学习变成真实工程能力的实习。
+              Currently learning Agent development systematically and am looking forward to an internship that will allow me to turn my learning into real engineering skills.
             </p>
           </aside>
         </div>
