@@ -52,6 +52,30 @@ export const experiences: Array<{
   },
 ]
 
+export const currentlyBuilding: Array<{
+  title: string
+  role: string
+  status: string
+  description: string
+  highlights?: string[]
+  technologies?: string[]
+  collaborator?: { name: string; url: string }
+}> = [
+  {
+    title: "Decypher AI",
+    role: "System Architect, Backend & AI Pipeline — Collaboration",
+    status: "Planning Phase",
+    description: "An AI-driven intelligence platform for tech founders and researchers that continuously monitors 15+ fragmented signal sources (GitHub, Hacker News, arXiv, Product Hunt, SEC EDGAR) across five modules — business, academic research, startups, stock market, and jobs — scoring and structuring signals via LLMs into actionable opportunity cards on a Bento Grid dashboard, paired with a context-aware AI Analyst.",
+    highlights: [
+      "Architecting the closed-loop pipeline: scheduled multi-source ingestion → LLM-based cleaning & scoring → opportunity cards → user feedback → preference-aware re-ranking",
+      "Building the FastAPI + async SQLAlchemy backend on PostgreSQL, with Redis-backed APScheduler jobs handling scheduled collection across all five modules",
+      "Designing a provider-agnostic LLM layer (OpenAI gpt-4o-mini primary, DeepSeek fallback, switchable via env var) for signal scoring and the AI Analyst assistant",
+    ],
+    technologies: ["FastAPI", "Python", "SQLAlchemy", "PostgreSQL", "Redis", "OpenAI API", "DeepSeek API", "APScheduler"],
+    collaborator: { name: "KinguYume-G", url: "https://github.com/KinguYume-G" },
+  },
+]
+
 export const projects: Array<{
   title: string
   category: string

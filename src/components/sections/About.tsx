@@ -1,10 +1,11 @@
 "use client"
 
+import { ArrowUpRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { SectionLabel } from "@/components/shared/SectionLabel"
 import { VerticalText } from "@/components/shared/VerticalText"
 import { BracketLabel } from "@/components/shared/BracketLabel"
-import { personalInfo, experiences } from "@/lib/data"
+import { personalInfo, currentlyBuilding } from "@/lib/data"
 
 export function About() {
   const sectionRef = useScrollAnimation({ selector: ".about-content" })
@@ -46,40 +47,55 @@ export function About() {
 
           <div>
             <h3 className="magazine-kicker mb-8 border-b border-foreground/12 pb-4">
-              Learning Notes
+              Now Building
             </h3>
-            <div className="relative">
-              {experiences.length > 0 ? (
-                <>
-                <div className="absolute left-[5.5rem] top-0 bottom-0 w-px bg-accent/35" />
-                <div className="space-y-10">
-                  {experiences.map((exp, i) => (
-                  <div key={i} className="group relative flex gap-8">
-                    <div className="w-20 shrink-0 text-right">
-                      <BracketLabel hover={false} className="text-xs">
-                        {exp.period.split(" - ")[0].toUpperCase().slice(0, 3)}_{exp.period.split(" - ")[1]?.slice(2) || "NOW"}
-                      </BracketLabel>
-                    </div>
-                    <div className="absolute left-[5.5rem] top-2 h-2 w-2 -translate-x-1/2 bg-background ring-1 ring-accent/70 group-hover:bg-accent transition-colors" />
-                    <div className="pl-8 group-hover:translate-x-1 transition-transform duration-300">
-                      <h4 className="font-editorial text-2xl font-semibold tracking-normal text-foreground">{exp.company}</h4>
-                      <p className="font-mono text-xs text-muted-foreground mt-1">{exp.role}</p>
-                      <p className="text-sm text-muted-foreground/80 mt-2 leading-relaxed">{exp.description}</p>
-                    </div>
-                  </div>
-                  ))}
-                </div>
-                </>
-              ) : (
-                <div className="magazine-paper border border-foreground/12 p-7">
+            <div className="space-y-8">
+              {currentlyBuilding.map((item) => (
+                <div
+                  key={item.title}
+                  className="magazine-paper group border border-foreground/12 p-7 transition-colors hover:border-accent/40"
+                >
                   <BracketLabel hover={false} className="text-accent">
-                    NO FORMAL EXPERIENCE YET
+                    {item.status}
                   </BracketLabel>
-                  <p className="mt-6 text-sm leading-7 text-muted-foreground">
-                    No fabricated experience here. This space is reserved for real internships, project collaborations, and verifiable engineering records.
-                  </p>
+                  <h4 className="font-editorial mt-4 text-2xl font-semibold tracking-normal text-foreground">
+                    {item.title}
+                  </h4>
+                  <p className="font-mono text-xs text-muted-foreground mt-1">{item.role}</p>
+                  <p className="mt-4 text-sm leading-7 text-muted-foreground/90">{item.description}</p>
+                  {item.highlights && item.highlights.length > 0 && (
+                    <ul className="mt-5 space-y-3">
+                      {item.highlights.map((point, idx) => (
+                        <li key={idx} className="flex gap-3 text-sm leading-7 text-muted-foreground">
+                          <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.technologies && item.technologies.length > 0 && (
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {item.technologies.map((tech) => (
+                        <span key={tech} className="project-river-token">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {item.collaborator && (
+                    <a
+                      href={item.collaborator.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-accent transition-colors hover:text-foreground"
+                      data-cursor-hover
+                    >
+                      Built with @{item.collaborator.name}
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </a>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
           </div>
         </div>
