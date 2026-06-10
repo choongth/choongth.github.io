@@ -69,7 +69,7 @@ export function Publications() {
                 </span>
                 <div>
                   <div className="mb-3 flex flex-wrap gap-2">
-                    {pub.tags.slice(0, 2).map((tag) => (
+                    {pub.tags.slice(0, 3).map((tag) => (
                       <BracketLabel key={tag} hover={false} className="text-[0.6rem]">
                         {tag}
                       </BracketLabel>

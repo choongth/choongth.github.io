@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
+import Image from "next/image"
 import { gsap } from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -286,10 +287,30 @@ export function Projects() {
                         <span
                           className={cn(
                             "project-river-preview",
+                            project.image && "project-river-preview-image",
                             project.visual === "semantic-search" && "project-river-preview-semantic",
                           )}
                         >
-                          {project.visual === "semantic-search" ? (
+                          {project.image ? (
+                            <span className="project-river-evidence">
+                              <Image
+                                src={project.image}
+                                alt={`${project.title} interface preview`}
+                                fill
+                                sizes="(min-width: 1024px) 22.5rem, 74vw"
+                                className="project-river-evidence-img"
+                              />
+                              <span className="project-river-evidence-overlay" aria-hidden="true" />
+                              <span className="project-river-evidence-tag">
+                                <BracketLabel hover={false} className="text-accent">
+                                  EVIDENCE
+                                </BracketLabel>
+                                <BracketLabel hover={false} className="text-[0.6rem]">
+                                  FIG. {String(index + 1).padStart(2, "0")}
+                                </BracketLabel>
+                              </span>
+                            </span>
+                          ) : project.visual === "semantic-search" ? (
                             <span className="project-semantic-visual" aria-hidden="true">
                               <span className="project-semantic-query">intent</span>
                               <span className="project-semantic-line project-semantic-line-a" />

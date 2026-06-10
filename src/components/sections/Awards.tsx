@@ -1,5 +1,6 @@
 "use client"
 
+import { ArrowUpRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { SectionLabel } from "@/components/shared/SectionLabel"
 import { VerticalText } from "@/components/shared/VerticalText"
@@ -48,17 +49,22 @@ export function Awards() {
           {awards.map((award, i) => {
             const scope = scopeConfig[award.scope]
             return (
-              <div
+              <a
                 key={i}
+                href={award.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex gap-6 border-b border-foreground/10 py-8 first:border-t first:border-foreground/10 transition-colors hover:bg-foreground/[0.025] lg:gap-10"
+                data-cursor-hover
               >
                 <span className="w-6 shrink-0 font-mono text-sm italic text-muted-foreground/35 pt-0.5 select-none">
                   {ROMAN[i]}
                 </span>
 
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold leading-snug text-foreground">
-                    {award.title}
+                  <p className="flex items-start gap-2 font-semibold leading-snug text-foreground transition-colors group-hover:text-accent">
+                    <span>{award.title}</span>
+                    <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 -translate-y-0.5 translate-x-0 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:translate-x-0.5 group-hover:opacity-100" />
                   </p>
                   {award.project && (
                     <p className="mt-1.5 font-editorial text-base italic text-accent">
@@ -83,7 +89,7 @@ export function Awards() {
                     {award.date}
                   </span>
                 </div>
-              </div>
+              </a>
             )
           })}
         </div>

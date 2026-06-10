@@ -107,7 +107,7 @@ export const projects: Array<{
     description: "Production-grade RAG document assistant with hybrid BM25 + semantic search, cross-encoder reranking, and streamed token-by-token answers via a DeepSeek agent.",
     technologies: ["Python", "FastAPI", "ChromaDB", "RAG", "DeepSeek", "Streamlit", "Docker"],
     tags: ["rag", "ai-agent", "hybrid-search"],
-    image: "",
+    image: "/images/projects/smartdoc_assistant.jpeg",
     link: "https://github.com/choongth/agent-rag-app",
     dossier: "The pipeline runs in two stages: a DeepSeek agent uses tool-calling to decide retrieval actions, then synthesises streamed responses. Under the hood, retrieval combines SentenceTransformer HNSW vectors with BM25 keyword search, followed by cross-encoder reranking — all containerised with Docker and deployed on Railway.",
   },
@@ -118,7 +118,7 @@ export const projects: Array<{
     description: "Serverless multi-agent system on AWS achieving 9.3× speedup over sequential processing via SQS + Lambda parallelisation and a two-layer DynamoDB memory system.",
     technologies: ["Python", "AWS Lambda", "Amazon SQS", "DynamoDB", "Bedrock", "SAM"],
     tags: ["aws", "serverless", "multi-agent"],
-    image: "",
+    image: "/images/projects/parallel_customer_service_agent.png",
     link: "https://github.com/choongth/parallel-customer-service-agent",
     dossier: "Multiple Lambda workers process customer messages simultaneously through SQS, handling 10 concurrent customers in ~1 second instead of 9. Memory is split into a short-term DynamoDB Conversations table (1-day TTL) and a shared FAQCache for permanent common-answer caching. A dead-letter queue captures any messages failing 3+ times.",
   },
@@ -129,7 +129,7 @@ export const projects: Array<{
     description: "Autonomous AI research agent using MCP, Claude Sonnet, and a human-in-the-loop workflow to search the web, process PDFs, and generate structured Markdown reports.",
     technologies: ["Python", "FastAPI", "Chainlit", "MCP", "Claude", "AWS S3", "Docker", "Nginx"],
     tags: ["mcp", "ai-agent", "human-in-the-loop"],
-    image: "",
+    image: "/images/projects/sift.png",
     link: "https://github.com/choongth/sift",
     dossier: "Sift operates in three phases: planning (generates a structured research plan for user approval), execution (ReAct loop — web search via Tavily, PDF retrieval via PyMuPDF, synthesis), and delivery (user approves the report before it's saved locally or uploaded to S3). Hosted on AWS EC2 with Nginx reverse proxy and Let's Encrypt SSL.",
   },
@@ -140,7 +140,7 @@ export const projects: Array<{
     description: "AI-powered receipt scanner and pantry tracker that detects grocery price inflation and shrinkflation over time. AWS CendekiAwan Hackathon submission.",
     technologies: ["Next.js", "TypeScript", "FastAPI", "Supabase", "Amazon Bedrock", "Tailwind CSS"],
     tags: ["full-stack", "ai", "hackathon"],
-    image: "",
+    image: "/images/projects/fridgeledger.jpg",
     link: "https://github.com/choongth/FridgeLedger",
     dossier: "Users upload grocery receipts; an AI model extracts line items via OCR and the backend stores pantry records, maintains price history, and identifies price anomalies using deterministic comparison logic. Tracks monthly spending analytics, waste ratios, and shrinkflation signals across merchants.",
   },
@@ -151,7 +151,7 @@ export const projects: Array<{
     description: "Clean no-login web app for memorising all 46 basic Japanese Hiragana characters, with dual-mode exercises, audio pronunciation, and local progress tracking.",
     technologies: ["React", "Vite", "Tailwind CSS", "Web Speech API"],
     tags: ["react", "education", "japanese"],
-    image: "",
+    image: "/images/projects/devil_learn_language.png",
     link: "https://github.com/choongth/devil_learn_language",
     demo: "https://devil-learn-language.vercel.app/",
   },
@@ -162,7 +162,7 @@ export const projects: Array<{
     description: "Real-time 2-player guessing game using Firebase. One player secretly fills a box, the other guesses — live scoring synced across both sessions via a shared room code.",
     technologies: ["HTML", "CSS", "JavaScript", "Firebase Realtime Database"],
     tags: ["realtime", "firebase", "game"],
-    image: "",
+    image: "/images/projects/ice_cream_box_guessing_game.png",
     link: "https://github.com/choongth/ice-cream-box-guessing-game",
     demo: "https://ice-cream-box-guessing-game.netlify.app/",
   },
@@ -225,6 +225,7 @@ export const awards: Array<{
   description: string
   date: string
   scope: "National" | "International" | "University"
+  link: string
 }> = [
   {
     title: "APICTA Awards (Malaysia Digital) 2025 — Tertiary Student Project Finalist",
@@ -232,6 +233,7 @@ export const awards: Array<{
     description: "Vertex AI Gemini fine-tuned Malaysia travel agent built with LangChain/LangGraph and n8n. Presented to the category judging panel on 21 Oct 2025 at PIKOM, the National Tech Association of Malaysia.",
     date: "Oct 2025",
     scope: "National",
+    link: "https://github.com/choongth/SynTour",
   },
   {
     title: "AWS CendekiAwan Hackathon 2026 — Top 20 Finalists",
@@ -239,6 +241,7 @@ export const awards: Array<{
     description: "AI-powered receipt scanner and pantry tracker that detects grocery price inflation and shrinkflation over time. Certificate of achievement issued May 2026 by Asia Pacific University of Technology and Innovation (APU/APIIT).",
     date: "May 2026",
     scope: "National",
+    link: "https://github.com/choongth/FridgeLedger",
   },
   {
     title: "Micron X Esum Case Study Competition",
@@ -246,12 +249,14 @@ export const awards: Array<{
     description: "Packaging Reliability Sentinel Dashboard for Semiconductor Industry.",
     date: "May 2026",
     scope: "National",
+    link: "https://choongth.github.io/packaging-reliability-sentinel-dashboard.github.io/",
   },
   {
     title: "APU Vice-Chancellor's List",
     description: "Excellent Academic Achievement, Academic Year 2024/25. Signed by Vice Chancellor Prof Dr Ho Chin Kuan.",
     date: "AY 2024/25",
     scope: "University",
+    link: "/images/awards/vc-certificate.jpg",
   },
 ]
 
