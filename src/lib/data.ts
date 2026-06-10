@@ -171,50 +171,43 @@ export const projects: Array<{
 export const publications: Array<{
   title: string
   description: string
-  technologies: string[]
   tags: string[]
   link: string
 }> = [
   {
     title: "Cloud Architecture Patterns",
     description: "Chinese translation of the essential cloud design patterns guide — covering scalability, availability, and resilience.",
-    technologies: ["Technical Writing", "Cloud Architecture"],
-    tags: ["translation", "cloud", "open-source"],
+    tags: ["cloud architecture", "system design", "open-source"],
     link: "https://github.com/choongth/Cloud_Architecture_Patterns_Chinese_Translated",
   },
   {
     title: "Software Architecture Patterns",
     description: "Chinese translation of the classic technical guide covering fundamental software architecture patterns.",
-    technologies: ["Technical Writing", "Software Architecture"],
-    tags: ["translation", "architecture", "open-source"],
+    tags: ["software architecture", "system design", "open-source"],
     link: "https://github.com/choongth/Software_Architecture_Patterns_Chinese_Translated",
   },
   {
     title: "Designing Event-Driven Systems",
     description: "Chinese translation exploring the fundamental principles of events as the core unit of communication in distributed systems.",
-    technologies: ["Technical Writing", "Event-Driven Architecture"],
-    tags: ["translation", "distributed-systems", "open-source"],
+    tags: ["distributed-systems", "event-driven architecture", "open-source"],
     link: "https://github.com/choongth/Designing_Event-Driven_Systems_Chinese_Translated",
   },
   {
     title: "The Case for Shared Nothing",
     description: "Chinese translation .",
-    technologies: ["Technical Writing", "Database"],
-    tags: ["translation", "research", "open-source"],
+    tags: ["research paper", "database", "open-source"],
     link: "https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E8%AE%BA%E6%97%A0%E5%85%B1%E4%BA%AB.md",
   },
   {
     title: "Towards HPC through Parallel Programming",
     description: "Chinese translation.",
-    technologies: ["Technical Writing", "High Performance Computing"],
-    tags: ["translation", "research", "open-source"],
+    tags: ["research paper", "high performance computing", "open-source"],
     link: "https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E9%80%9A%E8%BF%87%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F%E5%8F%8A%E5%85%B6%E5%8E%9F%E7%90%86%E8%BF%88%E5%90%91%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97_(HPC).md",
   },
   {
     title: "Immutability Changes Everything",
     description: "Chinese translation ",
-    technologies: ["Technical Writing", "Research", "Event-Sourcing"],
-    tags: ["translation", "research", "open-source"],
+    tags: ["research paper", "event-sourcing", "open-source"],
     link: "https://github.com/choongth/Research-Paper-Chinese-Translated/blob/main/%E4%B8%8D%E5%8F%98%E6%80%A7%E6%94%B9%E5%8F%98%E4%B8%80%E5%88%87.md",
   },
 ]
