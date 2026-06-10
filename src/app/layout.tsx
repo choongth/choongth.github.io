@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { Navbar } from "@/components/layout/Navbar"
 import { CustomCursor } from "@/components/effects/CustomCursor"
-import { ThemeProvider } from "@/components/theme/ThemeProvider"
 import { Toaster } from "@/components/ui/sonner"
 import { ChatBot } from "@/components/effects/ChatBot"
 import { MotionProgress } from "@/components/effects/MotionProgress"
@@ -45,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark" style={{ ["--font-sans" as string]: "Inter, system-ui, -apple-system, sans-serif", ["--font-mono" as string]: "JetBrains Mono, ui-monospace, monospace" }} suppressHydrationWarning>
+    <html lang="en" style={{ ["--font-sans" as string]: "Inter, system-ui, -apple-system, sans-serif", ["--font-mono" as string]: "JetBrains Mono, ui-monospace, monospace" }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -80,12 +79,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        <ThemeProvider>
-          <CustomCursor />
-          <Navbar />
-          <MotionProgress />
-          {children}
-        </ThemeProvider>
+        <CustomCursor />
+        <Navbar />
+        <MotionProgress />
+        {children}
         <Toaster />
         <ChatBot />
       </body>

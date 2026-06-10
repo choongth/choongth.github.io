@@ -5,7 +5,6 @@ import { useEffect, useState } from "react"
 import { Github, Mail, Menu, Linkedin, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { BracketLabel } from "@/components/shared/BracketLabel"
-import { ThemeToggle } from "@/components/theme/ThemeToggle"
 import { personalData } from "@/lib/data"
 
 const navLinks = [
@@ -59,7 +58,7 @@ export function Navbar() {
           scrolled ? "bg-background/92 backdrop-blur-sm border-b border-foreground/10" : "bg-transparent"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
+        <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-20 flex items-center justify-between h-16">
           <Link
             href="/"
             className="group flex items-center py-2 text-foreground transition-colors"
@@ -87,7 +86,6 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -157,7 +155,6 @@ export function Navbar() {
           )}
           style={{ transitionDelay: menuOpen ? `${navLinks.length * 50 + 100}ms` : "0ms" }}
         >
-          <ThemeToggle />
           {socialLinks.map((link) => (
             <a
               key={link.label}
