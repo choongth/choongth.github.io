@@ -20,24 +20,35 @@ export const personalInfo = {
 
 export const experiences: Array<{
   company: string
-  project: string
   role: string
   period: string
   description: string
+  highlights?: string[]
+  link?: string
 }> = [
   {
-    company: "Daikin Malaysia (Contracted Project)",
-    project: "AIT Systems",
-    role: "Technical Lead — Intelligent Enterprise Management Platform",
-    period: "Aug 2025 - Present",
-    description: "Designed TypeScript-based microservices and a RAG stack with Ollama local LLM. Implemented RBAC data security for an enterprise AI assistant handling knowledge retrieval at scale.",
+    company: "AIT Systems (with Daikin Malaysia)",
+    role: "Technical Lead — AI-Driven Enterprise Management Platform",
+    period: "Sep 2025 - Present",
+    description: "Built a full-stack AI-driven enterprise management platform using React 19, TypeScript, Django, and a locally-hosted LLM (Ollama/LLaMA 3.1:8b) — integrating ticketing, predictive maintenance, knowledge management, and an AI assistant into a unified system.",
+    highlights: [
+      "ML-powered predictive maintenance engine detecting equipment failures 7–14 days in advance with ~92% accuracy, reducing maintenance costs by 25–30% and cutting emergency fault resolution from 4–6 hours to ~15 minutes",
+      "RAG-based AI assistant over the company's internal knowledge base with role-gated access control, cutting knowledge query time from 30 minutes to under 30 seconds",
+      "Intelligent ticketing system with AI-driven auto-categorization, smart assignee recommendation (skill matrix, workload, historical success rate), and automated workflow routing — improving operational efficiency by 30%",
+      "Automated equipment purchase approval workflow, reducing cycle time from 21 days to 3 days with AI-assisted form auto-population and multi-level real-time tracking — eliminating data-entry errors entirely",
+      "Multi-role user architecture (CEO, Manager, Technician, Engineer, etc.) with differentiated AI responses and permission-scoped data access across all platform modules",
+    ],
   },
   {
-    company: "Own Project",
-    project: "SynTour - Malaysia Smart Tourism AI Assistant",
-    role: "System Architect & AI Algorithm Lead",
-    period: "Sep 2025 - Dec 2025",
-    description: "Fine-tuned Gemini 2.5 Flash on Google Vertex AI for Malaysian tourism context. Designed a four-stage dialogue engine with multimodal interaction built on FastAPI and Streamlit.",
+    company: "SynTour",
+    role: "Solo Developer — APICTA 2025 National Finalist",
+    period: "Jun 2025 - Oct 2025",
+    description: "Vertex AI Gemini 2.5 Flash fine-tuned Malaysia travel agent built with LangChain/LangGraph and n8n.",
+    highlights: [
+      "Designed a four-stage dialogue engine with multimodal interaction built on FastAPI and Streamlit",
+      "Presented to the category judging panel on 21 Oct 2025 at PIKOM, the National Tech Association of Malaysia",
+    ],
+    link: "https://github.com/choongth/SynTour",
   },
 ]
 
@@ -265,6 +276,8 @@ export const techStack = [
   { name: "MySQL", category: "Databases", level: 70 },
   { name: "MongoDB", category: "Databases", level: 68 },
   { name: "Redis", category: "Databases", level: 68 },
+  { name: "Pinecone", category: "Databases", level: 72 },
+  { name: "ChromaDB", category: "Databases", level: 80 },
   { name: "SQLite", category: "Databases", level: 65 },
   { name: "Microsoft SQL Server", category: "Databases", level: 62 },
   { name: "Elasticsearch", category: "Databases", level: 62 },

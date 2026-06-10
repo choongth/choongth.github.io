@@ -1,5 +1,6 @@
 "use client"
 
+import { ArrowUpRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { SectionLabel } from "@/components/shared/SectionLabel"
 import { BracketLabel } from "@/components/shared/BracketLabel"
@@ -53,6 +54,28 @@ export function Experience() {
                         <p className="text-base leading-8 text-foreground/75">
                           {exp.description}
                         </p>
+                        {exp.highlights && exp.highlights.length > 0 && (
+                          <ul className="mt-5 space-y-3">
+                            {exp.highlights.map((point, idx) => (
+                              <li key={idx} className="flex gap-3 text-sm leading-7 text-muted-foreground">
+                                <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+                                <span>{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {exp.link && (
+                          <a
+                            href={exp.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-accent hover:text-foreground transition-colors"
+                            data-cursor-hover
+                          >
+                            View Repository
+                            <ArrowUpRight className="h-3.5 w-3.5" />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
