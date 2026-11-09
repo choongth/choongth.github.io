@@ -1,0 +1,9 @@
+[submodule "content/books/designing-event-driven-systems"]
+	path = content/books/designing-event-driven-systems
+	url = https://github.com/choongth/Designing_Event-Driven_Systems_Chinese_Translated.git
+[submodule "content/books/cloud-architecture-patterns"]
+	path = content/books/cloud-architecture-patterns
+	url = https://github.com/choongth/Cloud_Architecture_Patterns_Chinese_Translated.git
+[submodule "content/books/software-architecture-patterns"]
+	path = content/books/software-architecture-patterns
+	url = https://github.com/choongth/Software_Architecture_Patterns_Chinese_Translated.git

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { books, papers } from "@/lib/data"
 import { SectionTitle } from "@/components/SectionTitle"
 
@@ -13,18 +14,16 @@ export function Books() {
       <SectionTitle>Books I translated into Chinese, free to read</SectionTitle>
       <div className="grid gap-4 md:grid-cols-3">
         {books.map((book, index) => (
-          <a
+          <Link
             key={book.title}
             href={book.link}
-            target="_blank"
-            rel="noopener noreferrer"
             className={`flex min-h-60 flex-col justify-between gap-12 rounded-2xl p-6 transition-transform hover:-translate-y-1 ${cardStyles[index % cardStyles.length]}`}
           >
             <span className="font-display text-[30px] font-bold leading-[1.08] tracking-[-0.02em]">
               {book.title}
             </span>
-            <span className="font-medium">{book.chapters} chapters · Read on GitHub ↗</span>
-          </a>
+            <span className="font-medium">{book.chapters} chapters · Read online →</span>
+          </Link>
         ))}
       </div>
       <div className="mt-6 flex flex-wrap gap-x-3 gap-y-1 text-sm">

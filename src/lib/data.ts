@@ -3,7 +3,7 @@ export const profile = {
   role: "AI & Full-Stack Developer",
   summary:
     "AI & Full-Stack Developer and CS student, specializing in high-concurrency systems and AI agent orchestration.",
-  status: "Intern at OneEmpower",
+  status: "Intern at OneEmpower (M) Sdn Bhd, KL",
   email: "tihuaichoong@gmail.com",
   github: "https://github.com/choongth",
   linkedin: "https://linkedin.com/in/choong-ti-huai-41a2b3227",
@@ -18,14 +18,21 @@ export const education = {
 type Project = {
   title: string
   description: string
-  technologies: string[]
-  link: string
+  /** Optional so work-in-progress projects can be listed before these exist. */
+  technologies?: string[]
+  link?: string
   demo?: string
   /** Omit to render a placeholder in the image container. */
   image?: { src: string; alt: string }
 }
 
 export const featuredProjects: Project[] = [
+  {
+    title: "Nestboard",
+    description: "Building in progress...",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "FastAPI"],
+    link: "https://github.com/choongth/Nestboard",
+  },
   {
     title: "Parallel Customer Service Agent",
     description:
@@ -70,6 +77,11 @@ export const featuredProjects: Project[] = [
       src: "/images/projects/devil_learn_language.png",
       alt: "Hiragana quiz showing the character あ with four answer choices and a score panel",
     },
+  },
+  {
+    title: "Occupance",
+    description: "Real-time occupancy monitoring system for a working office.",
+    technologies: ["React", "Node.js", "Socket.IO", "PostgreSQL", "FastAPI"],
   },
 ]
 
@@ -140,17 +152,17 @@ export const books = [
   {
     title: "Designing Event-Driven Systems",
     chapters: 15,
-    link: "https://github.com/choongth/Designing_Event-Driven_Systems_Chinese_Translated",
+    link: "/books/designing-event-driven-systems/",
   },
   {
     title: "Cloud Architecture Patterns",
     chapters: 15,
-    link: "https://github.com/choongth/Cloud_Architecture_Patterns_Chinese_Translated",
+    link: "/books/cloud-architecture-patterns/",
   },
   {
     title: "Software Architecture Patterns",
     chapters: 5,
-    link: "https://github.com/choongth/Software_Architecture_Patterns_Chinese_Translated",
+    link: "/books/software-architecture-patterns/",
   },
 ]
 
@@ -185,7 +197,7 @@ export const awards = [
 export const stack: Array<{ category: string; items: string[] }> = [
   {
     category: "Languages",
-    items: ["Python", "TypeScript", "JavaScript", "Java", "C#", "C++", "SQL"],
+    items: ["Python", "TypeScript", "JavaScript", "Java", "C", "C#", "C++", "SQL"],
   },
   {
     category: "Backend",
@@ -217,6 +229,6 @@ export const stack: Array<{ category: string; items: string[] }> = [
   },
   {
     category: "Workflow & Tooling",
-    items: ["n8n", "Git"],
+    items: ["n8n", "Git", "GitHub", "GitLab"],
   },
 ]

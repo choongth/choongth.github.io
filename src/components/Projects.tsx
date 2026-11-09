@@ -2,7 +2,19 @@ import Image from "next/image"
 import { featuredProjects, otherProjects } from "@/lib/data"
 import { SectionTitle } from "@/components/SectionTitle"
 
-const techLine = (technologies: string[]) => technologies.join(" · ")
+function ProjectTitle({ title, link }: { title: string; link?: string }) {
+  if (!link) return title
+  return (
+    <a href={link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+      {title}
+    </a>
+  )
+}
+
+function TechLine({ technologies }: { technologies?: string[] }) {
+  if (!technologies?.length) return null
+  return <p className="mt-4 text-sm text-muted">{technologies.join(" · ")}</p>
+}
 
 function DemoLink({ href }: { href: string }) {
   return (
@@ -41,12 +53,10 @@ export function Projects() {
             </div>
             <div className="p-6">
               <h3 className="font-display text-[26px] font-medium leading-tight tracking-[-0.01em]">
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {project.title}
-                </a>
+                <ProjectTitle title={project.title} link={project.link} />
               </h3>
               <p className="mt-2 leading-relaxed">{project.description}</p>
-              <p className="mt-4 text-sm text-muted">{techLine(project.technologies)}</p>
+              <TechLine technologies={project.technologies} />
               {project.demo && <DemoLink href={project.demo} />}
             </div>
           </article>
@@ -57,12 +67,10 @@ export function Projects() {
         {otherProjects.map((project) => (
           <article key={project.title} className="rounded-2xl border border-line bg-surface p-6">
             <h3 className="font-display text-[22px] font-medium leading-tight">
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                {project.title}
-              </a>
+              <ProjectTitle title={project.title} link={project.link} />
             </h3>
             <p className="mt-2 leading-relaxed">{project.description}</p>
-            <p className="mt-4 text-sm text-muted">{techLine(project.technologies)}</p>
+            <TechLine technologies={project.technologies} />
             {project.demo && <DemoLink href={project.demo} />}
           </article>
         ))}

@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Daily at 18:00 UTC (02:00 Malaysia time), so book repo updates go live without a portfolio commit.
+  schedule:
+    - cron: "0 18 * * *"
 
 permissions:
   contents: read
@@ -20,6 +23,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # Always publish the latest translations. To release a fix before the daily
+      # rebuild, run this workflow from the Actions tab.
+      - name: Update books to latest
+        run: git submodule update --remote --depth 1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
