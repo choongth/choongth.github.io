@@ -1,36 +1,25 @@
-import type { Metadata } from "next"
-import { Hero } from "@/components/sections/Hero"
-import { About } from "@/components/sections/About"
-import { Experience } from "@/components/sections/Experience"
-import { Projects } from "@/components/sections/Projects"
-import { Publications } from "@/components/sections/Publications"
-import { Awards } from "@/components/sections/Awards"
-import { TechStack } from "@/components/sections/TechStack"
-import { Contact } from "@/components/sections/Contact"
-import { Footer } from "@/components/sections/Footer"
-
-export const metadata: Metadata = {
-  title: "Choong Ti Huai | AI & Full-Stack Developer",
-  description: "Personal portfolio of Choong Ti Huai — AI & Full-Stack Developer specializing in distributed systems and AI agent orchestration.",
-  openGraph: {
-    url: "https://choongth.github.io",
-    title: "Choong Ti Huai | AI & Full-Stack Developer",
-    description: "Personal portfolio — distributed systems, AI agent orchestration, and full-stack engineering.",
-  },
-}
+import { Navbar } from "@/components/Navbar"
+import { Hero } from "@/components/Hero"
+import { Projects } from "@/components/Projects"
+import { Experience } from "@/components/Experience"
+import { Books } from "@/components/Books"
+import { Recognition } from "@/components/Recognition"
+import { Stack } from "@/components/Stack"
+import { Contact } from "@/components/Contact"
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Publications />
-      <Awards />
-      <TechStack />
+    <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
+      <Navbar />
+      <main>
+        <Hero />
+        <Projects />
+        <Experience />
+        <Books />
+        <Recognition />
+        <Stack />
+      </main>
       <Contact />
-      <Footer />
-    </main>
+    </div>
   )
 }

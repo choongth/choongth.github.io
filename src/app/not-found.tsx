@@ -1,41 +1,16 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import Link from "next/link"
-import { BracketLabel } from "@/components/shared/BracketLabel"
 
 export default function NotFound() {
-  const [display, setDisplay] = useState("")
-  const fullText = "404_NOT_FOUND"
-
-  useEffect(() => {
-    let i = 0
-    const timer = setInterval(() => {
-      setDisplay(fullText.slice(0, i + 1))
-      i++
-      if (i >= fullText.length) clearInterval(timer)
-    }, 120)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6">
-      <div className="text-center space-y-6">
-        <BracketLabel>ERROR</BracketLabel>
-        <h1 className="font-mono text-4xl font-bold tracking-tight min-h-[3rem]">
-          {display}
-          <span className="animate-pulse">_</span>
-        </h1>
-        <p className="text-muted-foreground max-w-md mx-auto">
-          The page you're looking for doesn't exist or has been removed.
-        </p>
-        <Link
-          href="/"
-          className="inline-block font-mono text-sm uppercase tracking-[0.1em] text-accent hover:text-foreground transition-colors border-b border-accent pb-1"
-        >
-          [HOME]
-        </Link>
-      </div>
-    </div>
+    <main className="mx-auto flex min-h-screen max-w-[1240px] flex-col justify-center px-4 sm:px-6">
+      <h1 className="font-display text-5xl font-bold tracking-tight sm:text-7xl">Page not found.</h1>
+      <p className="mt-4 text-muted">This page doesn&apos;t exist or has been moved.</p>
+      <Link
+        href="/"
+        className="mt-8 inline-flex min-h-12 w-fit items-center rounded-full bg-lime px-6 font-medium text-ink hover:opacity-80"
+      >
+        Back to home
+      </Link>
+    </main>
   )
 }
